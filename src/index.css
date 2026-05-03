@@ -25,9 +25,11 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 80px 80px;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 100px 100px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 40%, black 20%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 85% at 50% 40%, black 20%, transparent 100%);
     z-index: -1;
     pointer-events: none;
   }
@@ -91,6 +93,11 @@
   100% { transform: translate(2%,0) }
 }
 
+@keyframes text-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 @layer utilities {
   .bg-vignette {
     background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 120%);
@@ -114,7 +121,18 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/50 to-black/80;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      #ffffff 30%,
+      rgba(255, 255, 255, 0.9) 55%,
+      rgba(255, 255, 255, 0.55) 100%
+    );
+    background-size: 200% auto;
+    animation: text-shimmer 4s linear infinite;
   }
 
   .nav-link {

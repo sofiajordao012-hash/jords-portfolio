@@ -209,7 +209,7 @@ export default function App() {
             scale: 1.10,
           }}
           transition={{ duration: 22, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-          className="absolute w-[85vw] h-[240px] bottom-[2%] right-[-15%] opacity-78 blur-[52px] z-10"
+          className="absolute w-[85vw] h-[240px] bottom-[2%] right-[-15%] opacity-[0.7] blur-[52px] z-10"
           style={{
             background: "radial-gradient(ellipse at center, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.18) 24%, rgba(255,255,255,0.06) 50%, transparent 74%)",
           }}
@@ -228,7 +228,7 @@ export default function App() {
           transition={{ duration: 24, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           className="absolute w-[120vw] h-[80px] top-[58%] left-[-8%] blur-[20px] z-10"
           style={{
-            background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 18%, rgba(255,255,255,0.28) 48%, rgba(255,255,255,0.06) 72%, transparent 100%)",
+            background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 18%, rgba(255,255,255,0.16) 48%, rgba(255,255,255,0.04) 72%, transparent 100%)",
           }}
         />
 
@@ -242,7 +242,7 @@ export default function App() {
             scale: 1.06,
           }}
           transition={{ duration: 26, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-          className="absolute w-[70vw] h-[300px] top-[25%] right-[-10%] opacity-32 blur-[70px] z-10"
+          className="absolute w-[70vw] h-[300px] top-[25%] right-[-10%] opacity-[0.32] blur-[70px] z-10"
           style={{
             background: "radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)",
           }}
@@ -302,7 +302,7 @@ export default function App() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -1 }}
               whileTap={{ scale: 0.98 }}
-              className="group relative flex items-center gap-2 bg-white/[0.03] backdrop-blur-md border border-white/10 px-9 py-3 rounded-full text-base font-bold text-white transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]"
+              className="group relative flex items-center gap-2 bg-white/[0.02] backdrop-blur-md border border-white/[0.06] px-7 py-2.5 rounded-full text-base font-bold text-white transition-all duration-300 hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]"
             >
               {/* Subtle inner glow for the pill button */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -314,7 +314,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-48 pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-screen pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
         <VerticalGuide className="mb-12 opacity-40" height="h-24" />
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -326,27 +326,29 @@ export default function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-black/40 border border-white/10 backdrop-blur-xl mb-12 shadow-[0_0_30px_rgba(255,255,255,0.05)] group relative"
+            className="inline-flex items-center gap-3 px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-black/40 border border-white/10 backdrop-blur-xl mb-12 shadow-[0_0_30px_rgba(255,255,255,0.05)] group relative"
           >
             <div className="absolute inset-x-4 inset-y-1 bg-white/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,1)]" />
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-white/90 uppercase">Helping clients enhance their content</span>
+            <span className="text-[9px] sm:text-[11px] font-bold tracking-[0.05em] sm:tracking-[0.2em] text-white/90 uppercase">Helping clients enhance their content</span>
           </motion.div>
           
-          <motion.h1 
-            whileHover={{ 
-              scale: 1.01,
-              transition: { duration: 0.4 }
+          <motion.h1
+            animate={{
+              filter: [
+                "drop-shadow(0 20px 40px rgba(0,0,0,0.8))",
+                "drop-shadow(0 20px 50px rgba(0,0,0,0.6)) drop-shadow(0 0 50px rgba(255,255,255,0.06))",
+                "drop-shadow(0 20px 40px rgba(0,0,0,0.8))",
+              ]
             }}
-            className="text-[4.5rem] sm:text-8xl md:text-[11.5rem] font-bold tracking-tight mb-8 leading-[0.85] text-white pb-6 px-4 sm:px-16 overflow-visible select-none antialiased cursor-default block"
-            style={{ 
-              filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.8))",
-            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.01, transition: { duration: 0.4 } }}
+            className="text-[2.5rem] sm:text-7xl md:text-[9rem] font-bold tracking-tight mb-4 leading-[0.85] text-white pb-2 px-4 sm:px-16 overflow-visible select-none antialiased cursor-default block"
           >
             Architecture<br className="hidden md:block" />of <span className="text-gradient">Attention.</span>
           </motion.h1>
           
-          <p className="max-w-3xl mx-auto text-white/50 text-lg md:text-[1.8rem] font-light mb-16 leading-[1.4] tracking-tight px-4 md:px-0">
+          <p className="max-w-3xl mx-auto text-white/50 text-base md:text-xl font-light mb-8 leading-[1.4] tracking-tight px-4 md:px-0">
             Elevating your content through immersive narratives, <br className="hidden md:block" /> engineered for retention and engagement.
           </p>
 
@@ -360,10 +362,10 @@ export default function App() {
               href="https://x.com/Jordvisuals"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-14 py-6 rounded-[22px] bg-black border border-white/40 text-white font-bold text-xl tracking-tight transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.15)] overflow-visible inline-block"
+              className="group relative px-6 py-3 rounded-[22px] bg-black/30 backdrop-blur-md border border-white/25 text-white font-bold text-base tracking-tight transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.08)] overflow-visible inline-block"
             >
               <div className="absolute inset-0 rounded-[21px] overflow-hidden pointer-events-none">
-                <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-white/[0.12] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-white/[0.06] to-transparent" />
                 <div className="absolute inset-0 border border-white/10 rounded-[21px]" />
               </div>
               <div className="absolute -inset-1.5 bg-white/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
@@ -383,7 +385,7 @@ export default function App() {
               whileHover={{ scale: 1.02, y: -2, border: "1px solid rgba(255,255,255,0.3)" }}
               whileTap={{ scale: 0.98 }}
               href="#portfolio"
-              className="px-14 py-6 rounded-[22px] border border-white/15 text-white/40 font-bold text-xl tracking-tight hover:text-white transition-all duration-300 bg-white/[0.02] backdrop-blur-md shadow-[0_15px_40px_rgba(0,0,0,0.6)] inline-block"
+              className="px-6 py-3 rounded-[22px] border border-white/10 text-white/40 font-bold text-base tracking-tight hover:text-white transition-all duration-300 bg-transparent backdrop-blur-md shadow-[0_15px_40px_rgba(0,0,0,0.6)] inline-block"
             >
               View My Work
             </motion.a>
@@ -392,7 +394,7 @@ export default function App() {
           <VerticalGuide className="mb-16 opacity-30" height="h-24" />
 
           {/* Integrated Capability Cards - Now part of the Hero composition */}
-          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mt-8 pb-16">
+          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mt-8 pb-16">
             {CAPABILITIES.map((cap, idx) => (
               <motion.div
                 key={cap.id}
@@ -426,7 +428,7 @@ export default function App() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 1.5 }}
-            className="flex items-center justify-center gap-6 mt-12 select-none pointer-events-none pb-8"
+            className="hidden sm:flex items-center justify-center gap-6 mt-12 select-none pointer-events-none pb-8"
           >
             <span className="text-[10px] uppercase font-mono tracking-[0.4em] text-white/30">Scroll down</span>
             
@@ -464,11 +466,11 @@ export default function App() {
       </div>
 
       {/* Portfolio Showcase */}
-      <section id="portfolio" ref={targetRef} className="pt-32 pb-64 px-6 relative">
+      <section id="portfolio" ref={targetRef} className="pt-32 pb-20 md:pb-36 px-6 relative overflow-hidden">
         <VerticalGuide className="absolute top-0 left-1/2 -translate-x-1/2 opacity-60" height="h-32" />
         
         <motion.div style={{ opacity, scale }} className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-32 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-16 gap-6">
             <div className="text-center w-full">
               <span className="micro-label opacity-40 tracking-[0.4em]">turning videos into experiences</span>
               <motion.h2 
@@ -476,7 +478,7 @@ export default function App() {
                 whileInView={{ opacity: 0.1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[9rem] sm:text-[12rem] md:text-[18rem] font-bold text-white select-none leading-[0.8] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] tracking-[-0.08em]"
+                className="text-[4rem] sm:text-[8rem] md:text-[12rem] font-bold text-white select-none leading-[0.8] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] tracking-[-0.08em]"
               >
                 Projects.
               </motion.h2>
@@ -503,7 +505,7 @@ export default function App() {
             </div>
           </div>
           
-          <VerticalGuide className="mt-32 opacity-40" height="h-48" />
+          <VerticalGuide className="mt-16 opacity-40" height="h-24" />
         </motion.div>
       </section>
 
@@ -513,7 +515,7 @@ export default function App() {
       </div>
 
       {/* Introduction / About Section */}
-      <section id="about" className="pt-72 pb-24 px-6 relative overflow-hidden">
+      <section id="about" className="pt-16 pb-16 md:pt-24 px-6 relative overflow-hidden">
         <VerticalGuide className="absolute top-0 left-1/2 -translate-x-1/2 opacity-40 z-20" height="h-48" />
         {/* Atmospheric Background Layer */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -530,9 +532,9 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-20"
+            className="mb-10"
           >
-            <h2 className="text-5xl md:text-8xl font-extralight tracking-tighter text-white/30 flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <h2 className="text-3xl md:text-5xl font-extralight tracking-tighter text-white/30 flex flex-col md:flex-row items-center gap-4 md:gap-8">
               <span>It's</span>
               <span className="relative group">
                 <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent font-bold tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">
@@ -558,12 +560,12 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-12 max-w-5xl"
+            className="space-y-6 max-w-5xl"
           >
-            <p className="text-2xl md:text-4xl leading-snug text-white/50 font-light tracking-tight">
+            <p className="text-base md:text-xl lg:text-2xl leading-snug text-white/50 font-light tracking-tight">
               I'm Jords, a video editor helping creators and brands turn raw footage into content that <span className="text-white/90">feels intentional</span>, engaging, and impossible to ignore.
             </p>
-            <p className="text-2xl md:text-4xl leading-snug text-white/50 font-light tracking-tight">
+            <p className="text-base md:text-xl lg:text-2xl leading-snug text-white/50 font-light tracking-tight">
               My work blends high-retention editing, visual storytelling, and content strategy to create videos that hold attention, elevate your brand, and make every piece of content <span className="text-white/90">more purposeful</span>.
             </p>
           </motion.div>
@@ -574,18 +576,18 @@ export default function App() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="mt-24"
+            className="mt-10"
           >
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
               href="https://x.com/Jordvisuals"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-16 py-7 rounded-[26px] bg-white/[0.02] backdrop-blur-md border border-white/20 text-white font-bold text-2xl tracking-tight transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-visible hover:bg-white/[0.04] inline-block"
+              className="group relative px-5 py-3 sm:px-8 sm:py-4 rounded-[26px] bg-transparent backdrop-blur-md border border-white/[0.12] text-white font-bold text-base tracking-tight transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-visible hover:bg-white/[0.02] inline-block"
             >
               <div className="absolute inset-0 rounded-[25px] overflow-hidden pointer-events-none">
-                <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-white/[0.1] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-white/[0.05] to-transparent" />
                 <div className="absolute inset-0 border border-white/5 rounded-[25px]" />
               </div>
 
@@ -595,7 +597,7 @@ export default function App() {
               
               <span className="relative z-10 flex items-center gap-4">
                 let's work together?
-                <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform duration-500" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
               </span>
             </motion.a>
           </motion.div>
@@ -608,17 +610,17 @@ export default function App() {
       </div>
 
       {/* Philosophy / About */}
-      <section id="vision" className="pt-24 pb-32 px-6 relative overflow-hidden">
+      <section id="vision" className="pt-16 pb-12 px-6 relative overflow-hidden">
         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/[0.05]" />
         <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
-          <VerticalGuide className="mb-12 opacity-50" height="h-24" />
-          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[1] text-center mb-8 italic">
+          <VerticalGuide className="mb-6 opacity-50" height="h-24" />
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter leading-[1] text-center mb-3 italic">
             Visual Storytelling at <span className="text-white/40">Scale.</span>
           </h2>
-          <p className="text-apple-sub text-xl md:text-2xl font-light text-center max-w-2xl leading-relaxed">
+          <p className="text-apple-sub text-sm md:text-base font-light text-center max-w-xl leading-relaxed">
             content with rhythm, clarity, emotion, and strategy.
           </p>
-          <VerticalGuide className="mt-24 opacity-30" height="h-64" />
+          <VerticalGuide className="mt-8 opacity-30" height="h-10" />
         </div>
       </section>
 
@@ -628,7 +630,7 @@ export default function App() {
       </div>
 
       {/* Contact Section / Footer */}
-      <footer id="contact" className="pt-32 pb-64 px-6 border-t border-white/10 relative overflow-hidden flex flex-col items-center">
+      <footer id="contact" className="pt-8 pb-32 px-6 border-t border-white/10 relative overflow-hidden flex flex-col items-center">
         <VerticalGuide className="absolute top-0 left-1/2 -translate-x-1/2 opacity-30" height="h-32" />
         {/* Background Atmosphere */}
 
@@ -642,7 +644,7 @@ export default function App() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-[0_5px_15px_rgba(0,0,0,0.3)] mb-12"
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-[0_5px_15px_rgba(0,0,0,0.3)] mb-6"
           >
             <div className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)] animate-pulse" />
             <span className="text-[10px] font-bold tracking-[0.3em] text-white/90 uppercase">Available For Work</span>
@@ -654,7 +656,7 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-            className="text-[5rem] sm:text-[9rem] md:text-[13rem] font-bold tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 leading-none"
+            className="text-[2.5rem] sm:text-[4rem] md:text-[8rem] font-bold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 leading-none"
           >
             Let's create.
           </motion.h2>
@@ -665,7 +667,7 @@ export default function App() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-white/30 text-xl md:text-3xl font-light max-w-4xl leading-relaxed mb-12 px-4 tracking-tight"
+            className="text-white/30 text-sm md:text-lg font-light max-w-2xl leading-relaxed mb-10 px-4 tracking-tight"
           >
             Ready to work together, and <br className="hidden sm:block" />
             take your content to the next level?
@@ -679,7 +681,7 @@ export default function App() {
               onClick={handleCopyDiscord}
               whileHover={{ scale: 1.02, y: -5 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-64 h-28 bg-white/[0.01] backdrop-blur-2xl border border-white/5 rounded-[32px] flex items-center justify-center gap-5 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.5)] group overflow-hidden relative"
+              className="w-full sm:w-64 h-20 bg-white/[0.01] backdrop-blur-2xl border border-white/5 rounded-[32px] flex items-center justify-center gap-5 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.5)] group overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <MessageSquare className="w-10 h-10 text-white/20 group-hover:text-white transition-all duration-700 relative z-10" />
@@ -696,7 +698,7 @@ export default function App() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02, y: -5 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-64 h-28 bg-white/[0.01] backdrop-blur-2xl border border-white/5 rounded-[32px] flex items-center justify-center gap-4 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.5)] group overflow-hidden relative"
+              className="w-full sm:w-64 h-20 bg-white/[0.01] backdrop-blur-2xl border border-white/5 rounded-[32px] flex items-center justify-center gap-4 hover:bg-white/[0.03] hover:border-white/10 transition-all duration-700 shadow-[0_30px_60px_rgba(0,0,0,0.5)] group overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <Twitter className="w-10 h-10 text-white/20 group-hover:text-white transition-all duration-700 relative z-10" />
