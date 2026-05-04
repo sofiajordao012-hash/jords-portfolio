@@ -58,7 +58,7 @@ const PORTFOLIO = [
   { id: 1, videoUrl: 'https://www.youtube.com/embed/mv1V7bz5wII?rel=0&modestbranding=1&controls=1' },
   { id: 2, videoUrl: 'https://www.youtube.com/embed/HpFbxT8utTM?rel=0&modestbranding=1&controls=1' },
   { id: 3, videoUrl: 'https://www.youtube.com/embed/2U7SJyz56bE?rel=0&modestbranding=1&controls=1' },
-  { id: 4, videoUrl: 'https://www.youtube.com/embed/09Dmc_BUzpY?rel=0&modestbranding=1&controls=1' }
+  { id: 4, videoUrl: 'https://www.youtube.com/embed/ArfAOfRBuCY?rel=0&modestbranding=1&controls=1' }
 ];
 
 function ProjectBox({ videoUrl, aspectRatio = "aspect-[9/16]" }: { videoUrl: string; aspectRatio?: string; key?: any }) {
@@ -345,7 +345,8 @@ export default function App() {
             whileHover={{ scale: 1.01, transition: { duration: 0.4 } }}
             className="text-[2.5rem] sm:text-7xl md:text-[9rem] font-bold tracking-tight mb-4 leading-[0.85] text-white pb-2 px-4 sm:px-16 overflow-visible select-none antialiased cursor-default block"
           >
-            Architecture<br className="hidden md:block" />of <span className="text-gradient">Attention.</span>
+            <span className="block">Architecture</span>
+            <span className="block">of <span className="text-gradient">Attention.</span></span>
           </motion.h1>
           
           <p className="max-w-3xl mx-auto text-white/50 text-base md:text-xl font-light mb-8 leading-[1.4] tracking-tight px-4 md:px-0">
